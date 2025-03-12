@@ -1,6 +1,6 @@
 # Introduction
 
-This is a small project using Pépito the Cat data (Twitter account)[https://x.com/PepitoTheCat]. This Twitter bot is linked to a Raspberry Pi and a camera. The camera takes a picture of a cat trapdoor every time Pépito the Cat goes in or out. The picture is then posted on Twitter with a message (in our out).
+This is a small project using Pépito the Cat data [Twitter account](https://x.com/PepitoTheCat). This Twitter bot is linked to a Raspberry Pi and a camera. The camera takes a picture of a cat trapdoor every time Pépito the Cat goes in or out. The picture is then posted on Twitter with a message (in our out).
 
 There are two types of data:
 - The pictures for classification
