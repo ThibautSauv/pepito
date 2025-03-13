@@ -13,8 +13,15 @@ class PepitoModel(nn.Module):
         super(PepitoModel, self).__init__()
 
         self.model = models.vgg11(pretrained=True)
+
         in_features = self.model.classifier[-1].in_features
-        self.model.classifier[-1] = nn.Linear(in_features, num_classes)
+        self.model.classifier[6] = nn.Sequential(
+            nn.Linear(in_features, 512),
+            nn.ReLU(),
+            nn.Dropout(0.5),
+            nn.Linear(512, num_classes),
+        )
 
     def forward(self, x):
-        return self.model(x)
+        x = self.model(x)
+        return x
