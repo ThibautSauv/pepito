@@ -40,4 +40,6 @@ The minimum size is (240, 320, 3) so the images can be reshaped to a common 224x
 
 # TODO:
 - [ ] Use smaller models/preprocessing to reduce the size of the model (VGG11 seems to have figured out to look at the trapdoor)
-- [ ] Understand misclassification
+- [x] Understand misclassification
+- [ ] Filter out no-cat images from the dataset or relabel them to a new class
+- [ ] Compute and Analyze metrics
