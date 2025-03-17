@@ -37,6 +37,14 @@ The images are of different sizes and shapes. They are in color. The dataset is 
 ```
 The minimum size is (240, 320, 3) so the images can be reshaped to a common 224x224 size (usually used in CNNs).
 
+# Performance
+With only 5 epochs, the model is able to reach 97.56% accuracy on the test set. The misclassification is mostly due to the cat not being in the image, and the trapdoor being closed. Thus the image should be removed from the dataset.
+
+Removing the images where the cat is not present, the model reaches 99.8% accuracy on the test set, with only 5 epochs.
+
+# Conclusion
+The model used is a VGG11 pretrained, with the last layers replaced by two fully connected layers. The first layer has 512 neurons and the second one has 2 neurons. Seeing the performance of the model, it could be interesting to use a smaller model to reduce the size of the model and the computation time (even though it is already quite fast).
+
 
 # TODO:
 - [ ] Use smaller models/preprocessing to reduce the size of the model (VGG11 seems to have figured out to look at the trapdoor)
