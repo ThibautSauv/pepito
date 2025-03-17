@@ -4,6 +4,7 @@ import os
 import glob
 from torchvision import transforms
 import torch
+import json
 
 
 def get_class(full_path):
@@ -34,7 +35,6 @@ class PepitoDataset(Dataset):
     """
 
     def __init__(self, data_dir, transform=None):
-        self.data_dir = data_dir
         self.transform = transform
 
         self.all_paths = glob.glob(os.path.join(data_dir, "*/*.jpg"))
@@ -52,4 +52,19 @@ class PepitoDataset(Dataset):
         if self.transform:
             resized = self.transform(resized)
 
-        return resized, LABEL_MAP[class_name]
+        return resized, img_path, LABEL_MAP[class_name]
+
+
+class LimitedPepitoDataset(PepitoDataset):
+    """
+    Limits the PepitoDataset to a certain number of samples, given in a json file.
+    """
+
+    def __init__(self, json_dir, key, transform=None):
+        self.transform = transform
+
+        with open(json_dir, "r") as f:
+            self.json_data = json.load(f)
+
+        assert key in self.json_data, f"The json file must contain a '{key}' key."
+        self.all_paths = self.json_data[key]
