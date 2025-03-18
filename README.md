@@ -49,5 +49,7 @@ The model used is a VGG11 pretrained, with the last layers replaced by two fully
 # TODO:
 - [ ] Use smaller models/preprocessing to reduce the size of the model (VGG11 seems to have figured out to look at the trapdoor)
 - [x] Understand misclassification
-- [ ] Filter out no-cat images from the dataset or relabel them to a new class
+- [x] Filter out no-cat images from the dataset ~~or relabel them to a new class~~
+- [x] Use techniques to reduce features but keep the information
+  - [ ] PCA but the accuracy is really low (around 50%) but it's learning
 - [ ] Compute and Analyze metrics
