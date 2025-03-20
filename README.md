@@ -52,4 +52,6 @@ The model used is a VGG11 pretrained, with the last layers replaced by two fully
 - [x] Filter out no-cat images from the dataset ~~or relabel them to a new class~~
 - [x] Use techniques to reduce features but keep the information
   - [ ] PCA but the accuracy is really low (around 50%) but it's learning
+    - [ ] After more epochs, the accuracy didn't improve above 55% and early stopping was triggered. The model is not learning anything.
+    - [ ] TODO: Get the data repartition on the limited dataset, it might be 55/45, which would explain the non-learning accuracy.
 - [ ] Compute and Analyze metrics
