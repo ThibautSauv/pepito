@@ -56,6 +56,9 @@ class LightPepitoModel(nn.Module):
             nn.Linear(in_features, 512),
             nn.ReLU(),
             nn.Dropout(0.5),
+            nn.Linear(512, 512),
+            nn.ReLU(),
+            nn.Dropout(0.5),
             nn.Linear(512, num_classes),
         )
 
